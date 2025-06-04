@@ -66,7 +66,3 @@ Follow the steps to run the training (a shorter demo) and visualize:
 
 ### PINN Solution vs Analytical (Epoch 200)
 ![Solution](plots/solution/solution_epoch_200.png)
-
-## License
-
-MIT License
