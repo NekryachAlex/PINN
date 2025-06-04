@@ -1,0 +1,38 @@
+# config.yaml
+
+pinn_class: "PoissonPINN"
+
+# Архитектура сети: вход 1 → два скрытых по 50 нейронов → выход 1
+layers: [1, 50, 50, 1]
+
+# Число точек для каждой эпохи
+n_interior: 1024   # точки внутри (для PDE-residual)
+n_boundary: 2      # ровно две граничные точки x=0 и x=1
+
+optimizer:
+  name: "Adam"
+  lr: 0.001
+
+# Веса частей loss. Data = 0, т.к. мы не используем data loss.
+loss_weights:
+  residual: 1.0
+  boundary: 1.0
+  data: 0.0
+
+# Общее число эпох
+num_epochs: 200
+
+# Устройство для обучения ("cuda" или "cpu")
+device: "cuda"
+
+# Частоты (по эпохам) для различных колбэков
+plot_loss_freq: 100          # обновлять график loss каждые 100 эпох
+plot_solution_freq: 20       # сохранять график решения каждые 20 эпох
+checkpoint_save_freq: 50     # сохранять чекпоинт каждые 50 эпох
+relative_rmse_freq: 100      # печатать relative RMSE каждые 100 эпох
+
+# Параметры ONNX-экспорта
+onnx:
+  export: true
+  export_path: "models/poisson.onnx"
+  opset_version: 13
