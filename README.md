@@ -3,15 +3,14 @@
 
 This repository contains a Physics-Informed Neural Network (PINN) library for solving the one-dimensional Poisson equation:
 
-\[
-  -u''(x) = f(x), \quad x \in [0,1], \quad u(0)=0, \, u(1)=0.
-\]
+
+$-u''(x) = f(x), \quad x \in [0,1], \quad u(0)=0, \, u(1)=0.$
+
 
 In particular, we consider \(f(x) = \sin(\pi x)\), whose analytical solution is:
 
-\[
-  u_{true}(x) = \frac{\sin(\pi x)}{\pi^2}.
-\]
+
+  $u_{true}(x) = \frac{\sin(\pi x)}{\pi^2}.$
 
 The library includes:
 - **PINN implementation** (`pinn.py`)
