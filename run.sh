@@ -3,8 +3,8 @@ set -e
 
 # 1) Устанавливаем зависимости (если ещё не установлены)
 #    Можно закомментировать эти строки, если уже всё установлено.
-pip install --upgrade pip
-pip install torch torchvision matplotlib numpy pyyaml onnx onnxruntime
+#pip install --upgrade pip
+#pip install torch torchvision matplotlib numpy pyyaml onnx onnxruntime
 # 2) Создаём необходимые директории для артефактов (plots, checkpoints, models)
 mkdir -p plots/solution
 mkdir -p checkpoints
